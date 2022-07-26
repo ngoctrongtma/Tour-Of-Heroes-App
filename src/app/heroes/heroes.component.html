@@ -1,0 +1,25 @@
+<h2>List Heroes</h2>
+<div class="list-hero-wrap">
+    <ul class="heroes" >
+        <li *ngFor="let hero of heroes">
+          <button type="button" (click)="onSelect(hero)" [class.selected]="hero === selectedHero">
+            <span class="badge">{{hero.id}}</span>
+            <span class="name">{{hero.name}}</span>
+          </button>
+        </li>
+    </ul>
+      
+    <app-hero-detail [hero]="selectedHero"></app-hero-detail>
+</div>
+
+
+<!-- this part is show one hero. it have some important theory so not remove  -->
+<!-- <div><span>id: </span>{{hero.id}}</div> -->
+<!-- <div> -->
+    <!-- <label for="name">Hero name: </label> -->
+    <!-- <input id="name" [(ngModel)]="hero.name" placeholder="name">  -->
+    <!-- explain for property of input tag
+        1. [(ngModel)] directive is Angular's two-way data binding syntax.
+        2. Data can flow from the hero.name property to the text box and from the text box back to the hero.name (hero.name in class HeroesComponent)
+    -->
+<!-- </div> -->
