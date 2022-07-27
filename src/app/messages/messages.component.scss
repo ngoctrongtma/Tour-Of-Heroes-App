@@ -6,8 +6,8 @@ h2 {
   }
   
   .clear {
-    color: #333;
-    background-color: #eee;
+    color: rgb(240, 240, 240);
+    background-color: rgb(255, 113, 113);
     margin-bottom: 12px;
     padding: 1rem;
     border-radius: 4px;
@@ -21,5 +21,13 @@ h2 {
     border: 1px solid;
     padding: 15px;
     border-radius: 10px;
-    min-height: 500px;
+    height: 450px;
+    overflow: auto;
+    .message-detail{
+        background-color: #ffce46;
+        font-size: 18px;
+        padding: 5px;
+        border-radius: 5px;
+        margin-top: 3px;
+    }
   }

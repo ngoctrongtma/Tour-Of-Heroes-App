@@ -1,5 +1,9 @@
 <h1>{{title}}</h1>
+<nav>
+  <a routerLink="/dashboard">Dashboard</a>
+  <a routerLink="/heroes">Heroes</a>
+  <a routerLink="/message">Message</a>
+</nav>
 <div class="hero-app-wrap">
-  <app-heroes></app-heroes>
-  <app-messages></app-messages>
+  <router-outlet></router-outlet>
 </div>
