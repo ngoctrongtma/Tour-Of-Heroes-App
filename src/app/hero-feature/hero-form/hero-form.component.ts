@@ -1,6 +1,6 @@
 import { HttpClient } from '@angular/common/http';
-import { HeroService } from './../hero.service';
-import { Hero } from './../hero';
+import { HeroService } from '../hero.service';
+import { Hero } from '../hero';
 import { Component, OnInit } from '@angular/core';
 @Component({
   selector: 'app-hero-form',

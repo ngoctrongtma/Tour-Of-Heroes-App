@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
-import { Hero } from '../hero';
-import { HeroService } from '../hero.service';
+import { Hero } from '../hero-feature/hero';
+import { HeroService } from '../hero-feature/hero.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -16,8 +16,8 @@ export class DashboardComponent implements OnInit {
     this.getHeroes();
   }
 
-  getHeroes(): void {
+  getHeroes(): void { // get Top 5 heroes
     this.heroService.getHeroes()
-      .subscribe(heroes => this.heroes = heroes.slice(1, 5));
+      .subscribe(heroes => this.heroes = heroes.slice(1, 5)); // subscribe active ???
   }
 }

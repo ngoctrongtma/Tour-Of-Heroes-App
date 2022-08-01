@@ -14,19 +14,19 @@ import { HeroService } from '../hero.service';
   styleUrls: ['./hero-search.component.scss']
 })
 export class HeroSearchComponent implements OnInit {
-  heroes$!: Observable<Hero[]>; // it is result of research.
+  heroes$!: Observable<Hero[]>; // it contain the result of research.
 
-  private searchTerms = new Subject<string>();
+  private searchTerms = new Subject<string>();  // ??? => answer in Rxjs
  
   constructor(private heroService: HeroService) {}
 
-  search(term: string): void {
-    this.searchTerms.next(term);
+  search(term: string): void { 
+    this.searchTerms.next(term); // ??? => answer in Rxjs
   }
 
   ngOnInit(): void {
     
-    this.heroes$ = this.searchTerms.pipe(
+    this.heroes$ = this.searchTerms.pipe( // ???
       // wait 300ms after each keystroke before considering the term
       debounceTime(300),
 

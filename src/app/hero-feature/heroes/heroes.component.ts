@@ -1,7 +1,7 @@
-import { Hero } from './../hero';
+import { Hero } from '../hero';
 import { Component, OnInit } from '@angular/core';
 import { HeroService } from '../hero.service';
-import { MessageService } from '../message.service';
+import { MessageService } from '../../message.service';
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
@@ -12,7 +12,6 @@ export class HeroesComponent implements OnInit {
   heroes : Hero[] = [];
 
   getHeroes(): void {
-   
       this.heroService.getHeroes().subscribe(heroes => {
         console.log("list hero:", heroes);
         this.heroes = heroes;
@@ -22,7 +21,7 @@ export class HeroesComponent implements OnInit {
 
   deleteHero(hero: Hero): void {
     this.heroes = this.heroes.filter(h => h !== hero);
-    this.heroService.deleteHero(hero.id).subscribe();
+    this.heroService.deleteHero(hero.id).subscribe(); // research about subscribe
   }
   
   constructor(private heroService: HeroService, private messageService: MessageService) { }
