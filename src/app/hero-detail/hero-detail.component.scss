@@ -5,13 +5,19 @@
     padding: 15px;
     background-color: rgb(255, 186, 102);
     color: #fff;
+    .hero-property{
+      display: flex;
+      flex-direction: column;
+      input{
+        margin: 3px;
+      }
+    }
 }
 span{
     font-size: 18px;
 }
 label{
     font-size: 18px;
-
 }
 input{
     font-size: 18px;
@@ -27,16 +33,9 @@ label {
   }
   button {
     margin-top: 20px;
-    background-color: #eee;
-    padding: 1rem;
-    border-radius: 4px;
-    font-size: 1rem;
+    color: #333;
   }
   button:hover {
     background-color: #cfd8dc;
   }
-  button:disabled {
-    background-color: #eee;
-    color: #ccc;
-    cursor: auto;
-  }
+ 

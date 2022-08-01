@@ -5,7 +5,16 @@
     padding: 0;
     width: 15em;
   }
+  button{
+    margin-left: 5px;
+    height: 25px;
+    width: 25px;
+    display: flex;
+    align-items: center;
+  }
   .heroes li {
+    margin-top: 20px;
+    height: 30px;
     position: relative;
     cursor: pointer;
     font-size: 18px;
@@ -64,18 +73,4 @@
     text-align: right;
     margin-right: .8em;
     border-radius: 4px 0 0 4px;
-  }
-  .add-hero-wrap{
-    font-size: 18px;
-    background-color: #ffd8a4;
-    padding: 10px;
-    border-radius: 5px;
-    input{
-        height: 20px;
-        font-size: 18px;
-    }
-    button{
-        margin-left: 5px;
-        height: 30px;
-    }
   }

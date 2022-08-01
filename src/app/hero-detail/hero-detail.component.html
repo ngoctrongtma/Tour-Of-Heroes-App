@@ -2,10 +2,14 @@
 
     <h2>{{hero.name | uppercase}} Details</h2>
     <div><span>id: </span>{{hero.id}}</div>
-    <div>
+    <div class="hero-property">
       <label for="hero-name">Hero name: </label>
-      <input id="hero-name" [(ngModel)]="hero.name" placeholder="name">
+      <input id="hero-name"  class="form-control"  [(ngModel)]="hero.name" placeholder="name" disabled="true">
+      <label for="hero-name">Hero power: </label>
+      <input id="hero-name"  class="form-control"  [(ngModel)]="hero.power" placeholder="name" disabled="true">
+      <label for="hero-name">Hero alterEgo: </label>
+      <input id="hero-name"  class="form-control"  [(ngModel)]="hero.alterEgo" placeholder="name" disabled="true">
     </div>
-    <button type="button" (click)="save()" style="margin-right: 5px;">save</button>
-    <button type="button" (click)="goBack()">go back</button>
+    <button type="button" class="btn"  (click)="save()" style="margin-right: 5px;">Edit</button>
+    <button type="button" class="btn"  (click)="goBack()">go back</button>
 </div>
