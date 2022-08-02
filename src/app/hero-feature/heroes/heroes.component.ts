@@ -2,6 +2,8 @@ import { Hero } from '../hero';
 import { Component, OnInit } from '@angular/core';
 import { HeroService } from '../hero.service';
 import { MessageService } from '../../message.service';
+import { ActivatedRoute } from '@angular/router';
+import { Observable, switchMap } from 'rxjs';
 @Component({
   selector: 'app-heroes',
   templateUrl: './heroes.component.html',
@@ -9,25 +11,32 @@ import { MessageService } from '../../message.service';
 })
 export class HeroesComponent implements OnInit {
 
-  heroes : Hero[] = [];
+  // heroes : Hero[] = [];
+  heroes$!: Observable<Hero[]>;
+  selectedId = 0;
 
-  getHeroes(): void {
-      this.heroService.getHeroes().subscribe(heroes => {
-        console.log("list hero:", heroes);
-        this.heroes = heroes;
-      }
-      )
-  }
+  // getHeroes(): void {
+  //     this.heroService.getHeroes().subscribe(heroes => {
+  //       console.log("list hero:", heroes);
+  //       this.heroes = heroes;
+  //     }
+  //   )
+  // }
 
-  deleteHero(hero: Hero): void {
-    this.heroes = this.heroes.filter(h => h !== hero);
-    this.heroService.deleteHero(hero.id).subscribe(); // research about subscribe
-  }
+  // deleteHero(hero: Hero): void {
+  //   this.heroes = this.heroes.filter(h => h !== hero);
+  //   this.heroService.deleteHero(hero.id).subscribe(); // research about subscribe
+  // }
   
-  constructor(private heroService: HeroService, private messageService: MessageService) { }
+  constructor(private heroService: HeroService, private messageService: MessageService,  private route: ActivatedRoute) { }
 
   ngOnInit(): void {
-    this.getHeroes();
+    this.heroes$ = this.route.paramMap.pipe(
+      switchMap(params => {
+        this.selectedId = parseInt(params.get('id')!, 10);
+        return this.heroService.getHeroes();
+      })
+    );
   }
 
 }

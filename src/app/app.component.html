@@ -3,11 +3,14 @@
   <nav>
     <a routerLink="/dashboard">Dashboard</a>
     <a routerLink="/crisis-center">Crisis Center</a>
-    <a routerLink="/heroes">Heroes</a>
+    <a routerLink="/heroes" routerLinkActive="active" ariaCurrentWhenActive="page">Heroes</a>
     <a routerLink="/message">Message</a>
     <a routerLink="/add-hero">Add Hero</a>
+    <a routerLink="/admin" routerLinkActive="active" ariaCurrentWhenActive="page">Admin</a>
   </nav>
   <div class="hero-app-wrap">
-    <router-outlet></router-outlet>
+    <!-- <div [@routeAnimation]="getAnimationData()"> -->
+      <router-outlet></router-outlet>
+    <!-- </div> -->
   </div>
 </div>

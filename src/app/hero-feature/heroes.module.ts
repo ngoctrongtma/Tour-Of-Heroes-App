@@ -9,7 +9,6 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroFormComponent } from './hero-form/hero-form.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 
-
 @NgModule({
   declarations: [
     HeroesComponent,

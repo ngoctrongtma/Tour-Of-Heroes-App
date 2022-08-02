@@ -1,4 +1,3 @@
-import { CrisisListComponent } from './crisis-list/crisis-list.component';
 import { NotFoundComponent } from './not-found/not-found.component';
 import { HeroFormComponent } from './hero-feature/hero-form/hero-form.component';
 import { MessagesComponent } from './messages/messages.component';

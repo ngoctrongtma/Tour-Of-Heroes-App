@@ -7,12 +7,12 @@ import { HeroFormComponent } from './hero-form/hero-form.component';
 import { HeroSearchComponent } from './hero-search/hero-search.component';
 
 const routes: Routes = [
-  { path: 'heroes',  component: HeroesComponent },
-  { path: 'detail/:id', component: HeroDetailComponent }
+  { path: 'heroes',  component: HeroesComponent, data: { animation: 'heroes' } },
+  { path: 'detail/:id', component: HeroDetailComponent, data: { animation: 'hero' } }
 ];
 
 @NgModule({
-  imports: [RouterModule.forChild(routes)],
+  imports: [RouterModule.forChild(routes)], // in feature module use RouterModunle.forChild() method
   exports: [RouterModule]
 })
 export class HeroesRoutingModule { }

@@ -14,19 +14,20 @@ export class CrisisDetailComponent implements OnInit, OnChanges, DoCheck {
   }
 
   ngOnInit(): void {
-   
-    
-  }
-  ngOnChanges(changes: SimpleChanges): void {
-  
-  }
-  ngDoCheck(): void {
     const id = Number(this.route.snapshot.paramMap.get('id'));// get id in params
     const currentCrisis : Crisis | undefined = [...CRISES].find((crisis)=>{return crisis.id === id })
     this.crisis = currentCrisis ;
     this.editName = this.crisis?.name;
   }
+  ngOnChanges(changes: SimpleChanges): void {
+  }
+  ngDoCheck(): void {
+ 
+  }
+  save(){
 
+  }
+  cancel(){
 
-
+  }
 }
