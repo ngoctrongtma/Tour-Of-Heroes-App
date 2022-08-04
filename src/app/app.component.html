@@ -1,11 +1,11 @@
 <div class="app-wrap">
   <h1>{{title}}</h1>
   <nav>
-    <a routerLink="/dashboard">Dashboard</a>
-    <a routerLink="/crisis-center">Crisis Center</a>
+    <a routerLink="/dashboard" routerLinkActive="active" [routerLinkActiveOptions]="{exact: true}">Dashboard</a>
+    <a routerLink="/crisis-center" routerLinkActive="active" >Crisis Center</a>
     <a routerLink="/heroes" routerLinkActive="active" ariaCurrentWhenActive="page">Heroes</a>
-    <a routerLink="/message">Message</a>
-    <a routerLink="/add-hero">Add Hero</a>
+    <a routerLink="/message" routerLinkActive="active" >Message</a>
+    <a routerLink="/add-hero" routerLinkActive="active" >Add Hero</a>
     <a routerLink="/admin" routerLinkActive="active" ariaCurrentWhenActive="page">Admin</a>
   </nav>
   <div class="hero-app-wrap">

@@ -23,27 +23,27 @@ export class HeroDetailComponent implements OnInit {
   
   ngOnInit(): void {
     // way 1:
-    // const id = Number(this.route.snapshot.paramMap.get('id'));// get id in params
-    // this.heroService.getHero(id)
-    // .subscribe(hero => this.hero = hero);
+    const id = Number(this.route.snapshot.paramMap.get('id'));// get id in params
+    this.heroService.getHero(id)
+    .subscribe(hero => this.hero = hero);
 
     // way 2: 
-    const heroTemp = this.route.paramMap.pipe(
-      switchMap((params: ParamMap) => 
-         this.heroService.getHero( Number(params.get('id')!))
-      )
-    )
-    heroTemp.subscribe(hero => {
-      this.hero = hero
-      console.log("hero:", this.hero )
-    })
+    // const heroTemp = this.route.paramMap.pipe(
+    //   switchMap((params: ParamMap) => 
+    //     this.heroService.getHero( Number(params.get('id')!))
+    //   )
+    // )
+    // heroTemp.subscribe(hero => {
+    //   this.hero = hero
+    //   console.log("hero:", this.hero )
+    // })
   }
   
   save(): void{
-    // if (this.hero) {
-    //   this.heroService.updateHero(this.hero)
-    //     .subscribe(() => this.goBack());
-    // }
+    if (this.hero) {
+      this.heroService.updateHero(this.hero)
+        .subscribe(() => this.goBack());
+    }
   }
 
   gotoHeroes(hero: Hero) {

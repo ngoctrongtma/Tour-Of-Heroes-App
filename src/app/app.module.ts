@@ -50,11 +50,11 @@ import { LoginComponent } from './auth/login/login.component';
     HttpClientInMemoryWebApiModule.forRoot(
       InMemoryDataService, { dataEncapsulation: false }
     ),
-    AuthModule,
-    HeroesModule,
-    CrisisCenterModule, 
-    AdminModule,
-    AppRoutingModule,
+    AuthModule, // Feature Module
+    HeroesModule, // Feature Module
+    CrisisCenterModule, // Feature Module
+    AdminModule, // Feature Module
+    AppRoutingModule, 
   ],
   providers: [],
   bootstrap: [AppComponent]

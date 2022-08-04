@@ -8,13 +8,13 @@ import { AuthGuard } from '../auth/auth.guard';
 
 const routes: Routes = [
   {
-    path: 'admin',
-    component: AdminComponent,
-    canActivate: [AuthGuard],
+    path: '',
+    component: AdminComponent, // have parent component
+    canActivate: [AuthGuard], // active like middleware
     children: [
       {
         path: '',
-        canActivateChild: [AuthGuard],
+        canActivateChild: [AuthGuard], // no have parent component
         children: [
           { path: 'crises', component: ManageCrisesComponent },
           { path: 'heroes', component: ManageHeroesComponent },
